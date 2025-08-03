@@ -1,12 +1,60 @@
-# React + Vite
+# 📚 Kitap Takip Uygulaması
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, kullanıcıların kitapları listeleyip, etiketleyerek (okundu, okunacak, favori) takip edebileceği bir web uygulamasıdır. Admin kullanıcılar kitap ekleyebilir, diğer kullanıcılar sadece kitapları görüntüleyip etiketleyebilir.
 
-Currently, two official plugins are available:
+## 🚀 Özellikler
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Kullanıcı kayıt ve giriş sistemi (JWT ile güvenli oturum yönetimi)
+- Admin paneli ile kitap ekleme (sadece admin)
+- Kitap listesi: kapak, başlık, yazar ve tarih bilgisi
+- Etiketleme sistemi: okundu, okunacak, favori
+- Etiket filtreleme
+- Kendi kitaplarını görme
+- Mobil uyumlu arayüz (Bootstrap ile)
+- MySQL veritabanı entegrasyonu
+- Flask + React mimarisi
 
-## Expanding the ESLint configuration
+## 🧩 Kullanılan Teknolojiler
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Backend:
+- Flask
+- Flask-JWT-Extended
+- SQLAlchemy
+- MySQL
+- CORS
+
+### Frontend:
+- React.js
+- React Router DOM
+- Axios
+- Bootstrap
+
+## 🔐 Giriş Bilgileri
+
+- İlk kayıt olan kullanıcı otomatik olarak **admin** olarak atanır.
+- Sonraki kullanıcılar `user` rolüyle kayıt olur.
+
+## ⚙️ Kurulum
+
+### 1. Backend
+
+```bash
+cd backend
+python -m venv .venv
+source .venv/bin/activate  # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+python create_tables.py
+python app.py
+```
+
+### 2. Frontend
+
+```bash
+npm install
+npm run dev
+```
+
+
+## 📝 Lisans
+
+Bu proje [MIT License](LICENSE) ile lisanslanmıştır.
